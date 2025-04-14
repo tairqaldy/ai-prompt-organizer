@@ -12,24 +12,34 @@
     <button onclick="toggleTheme()">🌓 Toggle Theme</button>
 
     <input type="text" id="title" placeholder="Prompt Title" />
-    <select id="category">
-      <option value="Essay">Essay</option>
-      <option value="Coding">Coding</option>
-      <option value="Image Gen">Image Gen</option>
-      <option value="Other">Other</option>
-    </select>
+    <div class="category-container">
+      <select id="category">
+        <option value="Essay">Essay</option>
+        <option value="Coding">Coding</option>
+        <option value="Image Gen">Image Gen</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="text" id="newCategory" placeholder="Or enter new category" />
+    </div>
     <textarea id="content" placeholder="Enter your prompt here..." rows="4"></textarea>
     <button onclick="savePrompt()">Save Prompt</button>
 
     <hr>
-    <label for="filter">Filter by category:</label>
-    <select id="filter" onchange="renderPrompts()">
-      <option value="All">All</option>
-      <option value="Essay">Essay</option>
-      <option value="Coding">Coding</option>
-      <option value="Image Gen">Image Gen</option>
-      <option value="Other">Other</option>
-    </select>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="🔎 Search prompts..." oninput="searchPrompts()" />
+    </div>
+    <div class="filters">
+      <label for="filter">Filter by category:</label>
+      <select id="filter" onchange="renderPrompts()">
+        <option value="All">All</option>
+        <option value="Essay">Essay</option>
+        <option value="Coding">Coding</option>
+        <option value="Image Gen">Image Gen</option>
+        <option value="Other">Other</option>
+      </select>
+      <button onclick="toggleFavoritesFilter()" id="favoritesFilter">⭐ Favorites</button>
+      <button onclick="toggleArchivedFilter()" id="archivedFilter">📦 Archived</button>
+    </div>
 
     <button onclick="exportPrompts()">📄 Export to TXT</button>
 
