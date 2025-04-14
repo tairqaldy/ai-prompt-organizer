@@ -1,0 +1,84 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg: #121212;
+  --text: white;
+  --input: #1f1f1f;
+  --prompt: #1e1e1e;
+  --header: #2a2a2a;
+  --delete-hover: #c0392b;
+}
+
+.light {
+  --bg: #f5f5f5;
+  --text: #111;
+  --input: #fff;
+  --prompt: #f0f0f0;
+  --header: #e0e0e0;
+  --delete-hover: #e74c3c;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background-color: var(--input);
+  color: var(--text);
+}
+
+button {
+  background-color: #03dac6;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #018786;
+}
+
+.prompt {
+  background: var(--prompt);
+  border-radius: 8px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--header);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.prompt-content {
+  display: none;
+  padding: 1rem;
+}
+
+.prompt-actions button {
+  margin-right: 0.5rem;
+}
+
+.prompt-actions button:nth-child(2):hover {
+  background-color: var(--delete-hover) !important;
+  color: white;
+}
